@@ -3,7 +3,6 @@ const router = express.Router();
 
 
 
-
 router.get('/', async (req, res) => {
     try {
         let users = await db.any('SELECT * FROM users')
@@ -13,9 +12,8 @@ router.get('/', async (req, res) => {
         })
     } catch (error) {
         console.log(error)
-        res.status(500)
         res.json({
-            message: 'error something went wrong.'
+            message: 'error something went wrong. Could not retrieve all users.'
         })
     }
 })
@@ -33,7 +31,7 @@ try {
         message: "One USER received"
     })
 } catch (error){
-    console.log("This user doesn't exist")
+    console.log("This user doesn't exist.")
 }
 }) 
 
@@ -54,7 +52,7 @@ router.post('/register', async  (req, res) => {
         })
     } catch (error) {
         res.json({
-            message: "there was an eorrr registering"
+            message: "there was an error registering user"
         })
     }
 })
@@ -68,18 +66,14 @@ try{
     let deleteUser =   `DELETE FROM users where id = $1`
     await db.any(deleteUser, [userId])
     res.json({
-        message: "Deleted User"
+        message: "This User  was Deleted"
     })
 } catch (error) {
     res.json({
-        message: " There was an error deleting user"
+        message: "There was an error deleting user"
     })
 }
 })
-
-
-
-
 
 
 
