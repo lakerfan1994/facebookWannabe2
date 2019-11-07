@@ -1,5 +1,5 @@
 const pgp = require('pg-promise')();
-const connectionString = "postgres://localhost:5432/facebook_db"
+const connectionString = "postgres://localhost:5432/fbwannabe_db"
 const db = pgp(connectionString);
 
 
