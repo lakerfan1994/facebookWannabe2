@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-const db = pgp(connectionString);
+const db = require('../db')
 
 router.get('/', async (req, res) => {
     try {
@@ -59,7 +59,7 @@ router.post('/register', async  (req, res) => {
 
 
 
-router.delete('/user_id', async (req, res)=>{
+router.delete('/:user_id', async (req, res)=>{
 let userId = req.params.user_id 
 
 try{
