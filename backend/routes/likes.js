@@ -1,5 +1,7 @@
 const express = require('express');
+
 let router = express.Router();
+
 const db= require('../db');
 
 router.get('/posts/:post_id', async (req, res) => {
@@ -9,6 +11,7 @@ router.get('/posts/:post_id', async (req, res) => {
 		res.send(response);
 	}
 	catch(err){
+    console.log("this broke");
 		res.json({err: 'this broke'});
 	}
 });
@@ -39,6 +42,7 @@ router.delete('/:post_id/:liker_id', async (req, res) => {
    	res.send(messageToUser);
 
 });
+
 
 
 

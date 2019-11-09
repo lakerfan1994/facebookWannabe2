@@ -1,10 +1,10 @@
 const express = require('express');
 const router = express.Router();
-
 const db = require('../db')
 
 router.get('/', async (req, res) => {
     console.log('running');
+
     try {
         let users = await db.any('SELECT * FROM users')
         res.json({
@@ -29,17 +29,18 @@ try {
    if(user.length === 0){
     throw new Error;
    }
+
     res.json({
         payload: user,
         message: "One USER received"
     })
+
 } 
  catch (error){
-    res.json({"err": "This user does not exist"});
+   console.log("This user doesn't exist.")
+   res.json({"err": "This user does not exist"});
 }
-}) 
-
-
+});
 
 router.post('/register', async  (req, res) => {
     
@@ -61,8 +62,6 @@ router.post('/register', async  (req, res) => {
     }
 })
 
-
-
 router.delete('/:user_id', async (req, res)=>{
 let userId = req.params.user_id 
 
@@ -78,9 +77,5 @@ try{
     })
 }
 })
-
-
-
-
 
 module.exports = router;
