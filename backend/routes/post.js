@@ -17,7 +17,7 @@ router.get('/all', async(req,res) => {
         })
         console.log(error);
         
-    }
+}   
 })
 
 router.get('/:user_id', async(req, res) => {
