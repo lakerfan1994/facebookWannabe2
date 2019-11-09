@@ -33,12 +33,11 @@ CREATE TABLE likes (
 CREATE TABLE albums (
     id SERIAL PRIMARY KEY,
     album_name VARCHAR,
-    albumOwner_id INT REFERENCES users (id) ON DELETE CASCADE
-    
+    albumOwner_id INT REFERENCES users (id) ON DELETE CASCADE 
 );
 
 CREATE TABLE pictures (
     id SERIAL PRIMARY KEY,
     album_id INT REFERENCES albums (id) ON DELETE CASCADE,
     picture_url VARCHAR
-)
+);
