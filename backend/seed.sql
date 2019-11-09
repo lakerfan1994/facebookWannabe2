@@ -19,6 +19,7 @@ CREATE TABLE posts (
 
 CREATE TABLE comments (
     id SERIAL PRIMARY KEY,
+    post_id INT REFERENCES posts (id) ON DELETE CASCADE,
     commenter_id INT REFERENCES users (id) ON DELETE CASCADE,
     body VARCHAR
 );
