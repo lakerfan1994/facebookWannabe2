@@ -56,5 +56,19 @@ try{
 })
 
 router.delete('/:post_id/:commenter_id', (req, res)=>{
+let post_id = req.params.post_id
+let commenter_id = req.params.commenter_id
 
+let deleteQUERY = await db.any(`SELECT * FROM comments WHERE post_id =$1 AND Commenter_id=$2`)
+try{
+    let deletePost = (deleteQuery, [post_id, commenter_id])
+    res.json({
+        res.json({
+            payload: deletePost, 
+            message: "Comment was deleted!"
+        })
+    })
+}catch (error ){
+    message: "Was unable to Delete Comment!"
+}
 })
