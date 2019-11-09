@@ -22,13 +22,10 @@ let comments = await db.any('SELECT * FROM comments WHERE post_id = $1')
 
 
 // router.post('/posts/:post_id/:commenter_id', async (req, res)=>{
-// let post_id = req.params.post_id
-// let commenter_id = req.params.commenter_id
-
-// let postQuery = await db.none(`SELECT * FROM comments WHERE post_id = $1 AND commenter_id = $2`)
+// let postQuery = await db.none(`INSERT INTO comments (post_id, commenter_id, body)
 
 // try {
-//     let registerPost = (postQuery, [post_id, commenter_id])
+//     let registerPost = (postQuery, [req.body.post_id, ])
 //     res.json({
 //         payload: registerPost,
 //         message:"Success posting comment"
