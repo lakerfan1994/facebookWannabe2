@@ -5,9 +5,9 @@ const db = require('../db')
 
 router.get('/posts/:post_id', async (req, res) => {
 let post_id = req.params.post_id
-let comments = await db.any('SELECT * FROM comments WHERE post_id = $1')
+let comments = await db.any(`SELECT * FROM comments WHERE post_id = ${post_id}`)
     try {
-        let getComments = (comments, [post_id])
+        let getComments = (comments)
         res.json({
             payload: comments,
             message: "getting all comments"
@@ -21,25 +21,28 @@ let comments = await db.any('SELECT * FROM comments WHERE post_id = $1')
 })
 
 
-router.post('/posts/:post_id/:commenter_id', async (req, res)=>{
-let post_id = req.params.post_id
-let commenter_id = req.params.commenter_id
+router.post('/posts/register', async (req, res)=>{
+let post_id = req.body.post_id
+let commenter_id = req.body.commenter_id;
+ let insertstuff = 
+        `INSERT INTO comments(post_id, commenter_id)
+         VALUES ($1, $2)`;
 
-let postQuery = await db.none(`SELECT * FROM comments WHERE post_id = $1 AND commenter_id = $2`)
+
 
 try {
-    let registerPost = (postQuery, [post_id, commenter_id])
+    let postQuery = await db.none(insertstuff, [post_id, commenter_id]);
+    let registerPost = ([post_id, commenter_id])
     res.json({
         payload: registerPost,
         message:"Success posting comment"
     })
 } catch (error){
-    console.log(error)
-}
+    res.json({err: error})}
 
 })
 
-router.patch('/:post_id/:commenter_id', (req, res)=>{
+router.patch('/:post_id/:commenter_id', async (req, res)=>{
 let post_id = req.params.post_id
 let commenter_id = req.params.commenter_id
 
@@ -55,20 +58,22 @@ try{
 }
 })
 
-router.delete('/:post_id/:commenter_id', (req, res)=>{
+router.delete('/:post_id/:commenter_id', async (req, res)=>{
 let post_id = req.params.post_id
 let commenter_id = req.params.commenter_id
 
 let deleteQUERY = await db.any(`SELECT * FROM comments WHERE post_id =$1 AND Commenter_id=$2`)
 try{
     let deletePost = (deleteQuery, [post_id, commenter_id])
-    res.json({
-        res.json({
+    res.json(
+        {
             payload: deletePost, 
             message: "Comment was deleted!"
         })
-    })
-}catch (error ){
+    }
+catch (error ){
     message: "Was unable to Delete Comment!"
 }
 })
+
+module.exports = router;
