@@ -25,7 +25,7 @@ router.post('/posts/:post_id/:commenter_id', async (req, res)=>{
 let post_id = req.params.post_id
 let commenter_id = req.params.commenter_id
 
-let postQuery = db.none await (`SELECT * FROM comments WHERE post_id = $1 AND commenter_id = $2`)
+let postQuery = await db.none(`SELECT * FROM comments WHERE post_id = $1 AND commenter_id = $2`)
 
 try {
     let registerPost = (postQuery, [post_id, commenter_id])
@@ -36,5 +36,25 @@ try {
 } catch (error){
     console.log(error)
 }
+
+})
+
+router.patch('/:post_id/:commenter_id', (req, res)=>{
+let post_id = req.params.post_id
+let commenter_id = req.params.commenter_id
+
+let patchQuery = await db.any(`SELECT * FROM comments WHERE post_id = $1 AND commenter_id =$2`)
+try{
+    let editPost = (patchQuery, [post_id, commenter_id])
+    res.json({
+        payload: editPost, 
+        message: "Edits to comment were made!"
+    })
+} catch (eroor){
+    console.log(error)
+}
+})
+
+router.delete('/:post_id/:commenter_id', (req, res)=>{
 
 })
