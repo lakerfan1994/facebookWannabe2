@@ -54,7 +54,7 @@ router.post('/register', async(req, res) => {
         })
     }catch (error){
         res.json({
-            message: "there was an error"
+            message: error
         })
     }
 })
