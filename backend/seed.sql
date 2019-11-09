@@ -33,8 +33,7 @@ CREATE TABLE likes (
 CREATE TABLE albums (
     id SERIAL PRIMARY KEY,
     album_name VARCHAR,
-    albumOwner_id INT REFERENCES users (id) ON DELETE CASCADE
-    
+    albumOwner_id INT REFERENCES users (id) ON DELETE CASCADE 
 );
 
 CREATE TABLE pictures (
@@ -64,9 +63,3 @@ INSERT INTO users(firstname, lastname, age)
 
     INSERT INTO pictures(album_id, picture_url)
     VALUES(1, 'http://www.espn.com'), (2, 'http://www.nba.com');
-
-    
-
-
-
-
