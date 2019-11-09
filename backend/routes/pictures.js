@@ -30,10 +30,12 @@ router.post('/pictures/albums/:album_id', async (req, res)=>{
 
 router.get('/pictures/:pic_id', async (req, res)=>{
 try {
-    let getSinglePicture = await db.any(`SELECT * FROM pictures WHERE id = req.params.pic_id`)
+    let getSinglePicture = await db.any(`SELECT * FROM pictures WHERE id = req.body.pic_id`)
     res.json({
     })
-} 
+} catch (error){
+    console.log(error)
+}
 })
 
 
