@@ -1,5 +1,7 @@
-Routerconst express = require('express');
-let router = express.Router;
+const express = require('express');
+
+let router = express.Router();
+
 const db= require('../db');
 
 router.get('/posts/:post_id', async (req, res) => {
@@ -9,7 +11,8 @@ router.get('/posts/:post_id', async (req, res) => {
 		res.send(response);
 	}
 	catch(err){
-		console.log('this broke :(');
+    console.log("this broke");
+		res.json({err: 'this broke'});
 	}
 });
 
@@ -26,7 +29,7 @@ router.post('/posts/:post_id/:commenter_id', async (req, res) => {
    	res.send(messageToUser);
 })
 
-router.delete('/:post_id/:liker_id', async (req,, res) => {
+router.delete('/:post_id/:liker_id', async (req, res) => {
 	let response;
 	try{
 		response = await db.any('DELETE FROM likes WHERE liker_id = req.body.liker_id AND post_id = req.body.post_id');
@@ -38,7 +41,8 @@ router.delete('/:post_id/:liker_id', async (req,, res) => {
 	let messageToUser = {deletedLike: req.body};
    	res.send(messageToUser);
 
-})
+});
+
 
 
 
