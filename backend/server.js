@@ -18,7 +18,7 @@ app.use(express.json());
 // Routes
 const userRouter = require('./routes/users');
 
-//const postRouter = require('.routes/posts');
+const postRouter = require('./routes/post');
 // const commentRouter = require('./routes/comments');
  const likeRouter = require('./routes/likes')
 // const albumRouter = require('./routes/albums');
@@ -26,6 +26,7 @@ const userRouter = require('./routes/users');
 
 app.use('/users', userRouter);
 app.use('/likes', likeRouter);
+app.use('/post', postRouter);
 
 app.listen(port, ()=>{
     console.log('Server is running!')
