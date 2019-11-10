@@ -33,6 +33,7 @@ app.use('/posts', postRouter);
 app.use('/comments', commentRouter);
 
 
+
 app.listen(port, ()=>{
     console.log(`Server is running at port ${port}`)
 })
