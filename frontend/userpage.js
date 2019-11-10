@@ -16,6 +16,5 @@ const loadUser = async () => {
                 userList.appendChild(listItem)
             })
         }
-    
 
 
