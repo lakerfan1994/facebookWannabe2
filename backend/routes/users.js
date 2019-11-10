@@ -19,13 +19,14 @@ router.get('/all', async (req, res) => {
     }
 })
 
-router.get('/:user_id', async (req, res)=>{
-    let userId = req.params.user_id
+router.get('/:firstName/:lastName', async (req, res)=>{
+    let firstName = req.params.firstName;
+    let lastName = req.params.lastName;
     
 try {
-    let userQuery = `SELECT * FROM users WHERE id = ${userId}`;
-
-   let user = await db.any(userQuery);
+    let userQuery = `SELECT * FROM users WHERE firstname = $1 AND lastname = $2`;
+   let user = await db.one(userQuery, [firstName, lastName]);
+   console.log(user);
    if(user.length === 0){
     throw new Error;
    }
@@ -37,7 +38,7 @@ try {
 
 } 
  catch (error){
-   console.log("This user doesn't exist.")
+   console.log(error)
    res.json({"err": "This user does not exist"});
 }
 });
