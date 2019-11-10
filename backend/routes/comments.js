@@ -3,10 +3,15 @@ const router = express.Router();
 
 const db = require('../db')
 
-router.get('/posts/:post_id', async (req, res) => {
+router.get('/:post_id', async (req, res) => {
 let post_id = req.params.post_id
-let comments = await db.any(`SELECT * FROM comments WHERE post_id = ${post_id}`)
+let comments = await db.any(`SELECT * FROM comments WHERE post_id = ${post_id}`);
+
     try {
+        if(comments.length === 0){
+    throw new Error;
+}
+
         let getComments = (comments)
         res.json({
             payload: comments,
@@ -21,18 +26,19 @@ let comments = await db.any(`SELECT * FROM comments WHERE post_id = ${post_id}`)
 })
 
 
-router.post('/posts/register', async (req, res)=>{
+router.post('/register', async (req, res)=>{
 let post_id = req.body.post_id
 let commenter_id = req.body.commenter_id;
+let commentBody = req.body.body;
  let insertstuff = 
-        `INSERT INTO comments(post_id, commenter_id)
-         VALUES ($1, $2)`;
+        `INSERT INTO comments(post_id, commenter_id, body)
+         VALUES ($1, $2, $3)`;
 
 
 
 try {
-    let postQuery = await db.none(insertstuff, [post_id, commenter_id]);
-    let registerPost = ([post_id, commenter_id])
+    let postQuery = await db.none(insertstuff, [post_id, commenter_id, commentBody]);
+    let registerPost = ([post_id, commenter_id, commentBody])
     res.json({
         payload: registerPost,
         message:"Success posting comment"
@@ -42,29 +48,32 @@ try {
 
 })
 
-router.patch('/:post_id/:commenter_id', async (req, res)=>{
-let post_id = req.params.post_id
-let commenter_id = req.params.commenter_id
+router.patch('/update', async (req, res)=>{
+let post_id = req.body.post_id;
+let commenter_id = req.body.commenter_id;
+let commentBody = req.body.body;
 
-let patchQuery = await db.any(`SELECT * FROM comments WHERE post_id = $1 AND commenter_id =$2`)
+let patchQuery = await db.none(`UPDATE comments SET body = $1 WHERE post_id = $2 AND commenter_id = $3 `, [commentBody, post_id, commenter_id]);
 try{
-    let editPost = (patchQuery, [post_id, commenter_id])
+    let editPost = ([post_id, commenter_id])
     res.json({
         payload: editPost, 
         message: "Edits to comment were made!"
     })
-} catch (eroor){
-    console.log(error)
+} catch (err0r){
+    res.json({
+        error: err0r
+    })
 }
 })
 
-router.delete('/:post_id/:commenter_id', async (req, res)=>{
-let post_id = req.params.post_id
-let commenter_id = req.params.commenter_id
+router.delete('/delete', async (req, res)=>{
+let post_id = req.body.post_id;
+let commenter_id = req.body.commenter_id;
 
-let deleteQUERY = await db.any(`SELECT * FROM comments WHERE post_id =$1 AND Commenter_id=$2`)
+let deleteQUERY = await db.none(`DELETE FROM comments WHERE post_id = $1 AND commenter_id = $2`, [post_id, commenter_id]);
 try{
-    let deletePost = (deleteQuery, [post_id, commenter_id])
+    let deletePost = ([post_id, commenter_id])
     res.json(
         {
             payload: deletePost, 
