@@ -26,10 +26,6 @@ const postRouter = require('./routes/post');
  const albumRouter = require('./routes/albums');
  const pictureRouter = require('./routes/pictures');
 
-const commentRouter = require('./routes/comments');
-const likeRouter = require('./routes/likes')
-
-
 
 app.use('/users', userRouter);
 app.use('/likes', likeRouter);
