@@ -1,11 +1,11 @@
 const express = require('express');
 const router = express.Router();
 
-const db = require('/db');
+const db = require('../db');
 
-router.get('/albums/:album_id'), async (req, res =>{
+router.get('/:album_id', async (req, res) =>{
 try{
-    let getPictures = await db.any(`SELECT * FROM albums WHERE id = album_id`)
+    let getPictures = await db.any(`SELECT * FROM pictures WHERE album_id = ${req.params.album_id}`)
 res.json({
     payload: getPictures, 
     message: 'Receiving all pictures!'
@@ -15,34 +15,37 @@ res.json({
 }
 })
 
-router.post('/pictures/albums/:album_id', async (req, res)=>{
-    let insertstuff = await db.none (`INSERT INTO albums (album_id, picture_url) VALUES $1 $2`)
+router.post('/register', async (req, res)=>{
     try{
-        let picture = (insertstuff, [req.body.albums_id, req.body.picture_url])
+        let insertstuff = await db.none(`INSERT INTO pictures(album_id, picture_url) VALUES($1, $2)`, [req.body.album_id, req.body.picture_url]);
+        let picture = ([req.body.album_id, req.body.picture_url])
         res.json({
             payload: picture,
             message: "uploading picture"
         })
     } catch (error){
-        console.log(error)
+        res.json({err: error})
     }
 })
 
-router.get('/pictures/:pic_id', async (req, res)=>{
+router.get('/album/:pic_id', async (req, res)=>{
 try {
-    let getSinglePicture = await db.any(`SELECT * FROM pictures WHERE id = req.body.pic_id`)
+    let getSinglePicture = await db.any(`SELECT * FROM pictures WHERE id = ${req.params.pic_id}`);
     res.json({
-    })
+        payload: getSinglePicture,
+        message: 'Here is your picture'
+    });
 } catch (error){
-    console.log(error)
+    res.json({err: error});
 }
 })
 
 
-router.delete('/pictures/:pic_id', async (req, res) =>{
-    let deleteStuff = await db.any(`DELETE FROM albums WHERE id = $1`)
+router.delete('/delete', async (req, res) =>{
+    let stuffToDelete = [req.body.album_id, req.body.picture_url];
+    let deleteStuff = await db.none(`DELETE FROM pictures WHERE album_id = $1 AND picture_url = $2`, stuffToDelete);
 try {
-    let deletePicture = (deleteStuff, [req.body.id])
+    let deletePicture = ([req.body.picture_url])
     res.json({
         payload: deletePicture, 
         message: "picture selected deleted!"

@@ -2,14 +2,14 @@ const express = require('express');
 const router = express.Router();
 const db = require('../db')
 
-router.get('/:user_id', async(req,res) => {
+router.get('/:user_id', async (req,res) => {
     let userID = req.params.user_id
 
     try {
         let albumQuery = 
        `SELECT * 
         FROM albums 
-        WHERE user_id = $1;
+        WHERE albumOwner_id = $1;
         `
         let result = await db.any(albumQuery, [userID])
         res.json({
@@ -26,7 +26,7 @@ router.get('/:user_id', async(req,res) => {
 }   
 })
 
-router.post('/register', async(req, res) => {
+router.post('/register', async (req, res) => {
     try {
         let insertAlbum = `INSERT INTO albums(album_name, albumOwner_id)
         VALUES($1, $2)`
