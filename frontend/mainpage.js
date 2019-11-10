@@ -7,9 +7,6 @@ const loadPosts = async () => {
     postsList.innerHTML = "";
     const postresponse = await axios.get('http://localhost:3000/posts/all');
     const userresponse = await axios.get('http://localhost:3000/users/all');
-
-    // console.log(userresponse.data);
-    // console.log(postresponse.data);
     
     postresponse.data.payload.forEach((post) => {
         userresponse.data.payload.forEach((user) => {
