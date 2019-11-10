@@ -25,7 +25,6 @@ let comments = await db.any(`SELECT * FROM comments WHERE post_id = ${post_id}`)
     }
 })
 
-
 router.post('/register', async (req, res)=>{
 let post_id = req.body.post_id
 let commenter_id = req.body.commenter_id;
@@ -46,7 +45,8 @@ try {
 } catch (error){
     res.json({err: error})}
 
-})
+ })
+
 
 router.patch('/update', async (req, res)=>{
 let post_id = req.body.post_id;
@@ -86,3 +86,4 @@ catch (error ){
 })
 
 module.exports = router;
+
