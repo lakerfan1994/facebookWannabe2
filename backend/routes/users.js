@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const db = require('../db')
 
-router.get('/', async (req, res) => {
+router.get('/all', async (req, res) => {
     console.log('running');
 
     try {
