@@ -46,10 +46,10 @@ router.post('/register', async  (req, res) => {
     
     try {
  let insertstuff = 
-        `INSERT INTO users (firstname,lastname,age)
+        `INSERT INTO users (firstname,lastname,age, img_url)
          VALUES ($1, $2, $3)`
 
-        await db.none(insertstuff, [req.body.firstname, req.body.lastname, req.body.age])
+        await db.none(insertstuff, [req.body.firstname, req.body.lastname, req.body.age, req.body.img_url])
        
         res.json({
             payload: req.body,
