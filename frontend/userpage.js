@@ -1,6 +1,6 @@
-document.addEventListener('DOMContentLoaded', loadUser())
- 
-
+document.addEventListener('DOMContentLoaded', () => {
+    loadUser();
+});
 
 const loadUser = async () => {
     const userList = document.querySelector('#allUsers');
@@ -11,11 +11,11 @@ const loadUser = async () => {
 
     
         userresponse.data.payload.forEach((user) => {
-            if (user.id === post.poster_id) {
                 let listItem = document.createElement('li');
                 listItem.innerText = `${user.firstname} ${user.lastname}`;
-                UserList.appendChild(listItem)
-            }
-        })
-    }
+                userList.appendChild(listItem)
+            })
+        }
+    
+
 
