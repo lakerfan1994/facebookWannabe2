@@ -3,14 +3,15 @@ const router = express.Router();
 const db = require('../db')
 
 
-router.get('/all', async(req,res) => {
+router.get('/all', async (req,res) => {
     try {
         let post = await db.any("SELECT * FROM posts")
+        console.log(post);
         res.json({
             payload: post,
             message: "Success. Retrieve all the posts"
         });
-    }catch (error){
+    } catch (error){
         res.status(500)
         res.json({
             message: "something went wrong!"
