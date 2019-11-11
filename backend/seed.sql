@@ -53,19 +53,20 @@ INSERT INTO users(firstname, lastname, age, img_url)
           ('Leon', 'Bryne', 28, 'https://randomuser.me/api/portraits/men/94.jpg');
 
 INSERT INTO posts(poster_id, body)
-    VALUES(1, 'I really like this new recipe I created, it reflects my love for pasta!'), --1
-          (1, 'Alot of new pasta dishes use too much cheese, I have to stay healthy!'),--2
-          (2, 'I am grateful to my parents for teaching me how to make the family dish'),--3
-          (3, 'Ugh, pastries are so hard to make on my own, my wife makes them so much easier'),--4
-          (3, 'I hope nutmeg works with this cookie recipe'),--5
-          (4, 'I have a really bad allergy to shrimp, but I love cooking it! Seafood is the best'),--6
-          (4, 'Oof I broke out with a really bad rash, time to go to the hospital again LOL'),--7
-          (4, 'Hospital gave me some allergy medication, I think the doctor there is fed up with me...'),--8
-          (5, 'Me gusta cocinando carne'),--9
-          (5, 'Sancocho es difficil cocinar... ugh'),--10
-          (6, 'I think I have some leftover lasagna from last night, ITS LIT'),--11
-          (7, 'My chicken recipe is the best!'),--12
-          (7, 'I have a secret sauce I put on the meat to make it pop');--13
+    VALUES(1, 'I really like this new recipe I created, it reflects my love for pasta!'),
+          (4, 'I have a really bad allergy to shrimp, but I love cooking it! Seafood is the best'),
+          (2, 'I am grateful to my parents for teaching me how to make the family dish'),
+          (3, 'Ugh, pastries are so hard to make on my own, my wife makes them so much easier'),
+          (5, 'Me gusta cocinando carne'),
+          (4, 'Oof I broke out with a really bad rash, time to go to the hospital again LOL'),
+          (7, 'I have a secret sauce I put on the meat to make it pop'),
+          (1, 'Alot of new pasta dishes use too much cheese, I have to stay healthy!'),
+          (4, 'Hospital gave me some allergy medication, I think the doctor there is fed up with me...'),
+          (3, 'I hope nutmeg works with this cookie recipe'),
+          (5, 'Sancocho es difficil cocinar... ugh'),
+          (6, 'I think I have some leftover lasagna from last night, ITS LIT'),
+          (7, 'My chicken recipe is the best!');
+          
 
 INSERT INTO likes(liker_id, post_id)
     VALUES(1, 3), (1, 6), (1, 7), (1, 8),
