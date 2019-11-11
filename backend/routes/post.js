@@ -60,6 +60,18 @@ router.post('/register', async(req, res) => {
     }
 })
 
+router.delete('/:id', (req, res)=>{
+    try{
+        let deletePost = `DELETE FROM posts WHERE id = $1`
+        res.json({
+            message:"post deleted!"
+        })
+    }catch(error){
+        res.json({
+            message: error
+        })
+    }
+})
 
 
 
