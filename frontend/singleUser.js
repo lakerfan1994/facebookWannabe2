@@ -1,10 +1,10 @@
 let apiKey = `http://localhost:3000`;
 document.addEventListener('DOMContentLoaded', async () => {
 	let localStorage = window.localStorage;
-	// let firstName = localStorage.getItem('firstName');
-	// let lastName = localStorage.getItem('lastName');
-	let firstName = 'Ruben';
-	let lastName = 'Garcia';
+	let firstName = localStorage.getItem('firstName');
+	let lastName = localStorage.getItem('lastName');
+	//let firstName = 'Ruben';
+	//let lastName = 'Garcia';
 	addNameToBrowser(firstName, lastName);
 	let user = await axios.get(`${apiKey}/users/${firstName}/${lastName}`);
 	console.log(user);

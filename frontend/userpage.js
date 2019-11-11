@@ -22,6 +22,13 @@ const loadUser = async () => {
 }   
 const userSelected = (event) => {
     let x = event.target.innerText;
-    console.log(x)
+   let array = x.split(" ")
+   let user = window.localStorage;
+   let firstname = array[0];
+   let lastname = array[1];
+   user.setItem('firstName', `${firstname}`);
+   user.setItem('lastName', `${lastname}`);
+   window.location.href = "./singleUser.html";
     let userDiv = document.querySelector('#userDiv');
+
 }
