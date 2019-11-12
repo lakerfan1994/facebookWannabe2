@@ -142,7 +142,20 @@ INSERT INTO comments(post_id, commenter_id, body)
 
 
 INSERT INTO albums(album_name, albumOwner_id)
-    VALUES('Favorite Pasta', 1);
+    VALUES('Pasta lover', 1),
+          ('Carnivore', 1),
+          ('Homemade', 2),
+          ('Rice Dishes', 2),
+          ('Vegan Dinner', 3),
+          ('Vegan Dessert', 3),
+          ('Chicken', 4),
+          ('Chicken Apps', 4),
+          ('Mediterainian Lunch', 5),
+          ('Mediterainian Dinner', 5),
+          ('Chinese Apps', 6),
+          ('Japanese Apps', 6),
+          ('Seafood Pasta', 7),
+          ('Seafood Soup', 7);
 
 INSERT INTO pictures(album_id, picture_url)
     VALUES(1, 'https://media-public.canva.com/MACoEBYEqIA/1/thumbnail_large.jpg'), (1, 'https://media-public.canva.com/MAC5J15iTgg/1/thumbnail_large-1.jpg');
