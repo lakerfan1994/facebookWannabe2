@@ -46,7 +46,7 @@ img {
     border: 3px solid black;
     border-radius: 5px;
     width: 19em;
-
+    border-radius: 25px
 }
 
 img:hover {
@@ -56,10 +56,15 @@ img:hover {
 	transition: .2s ease-in-out;
 }
 
+#logo{
+    width:4em;
+}
+
 div{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr ;
     justify-content: center;
+    padding: .9em;
 }
 
 h2 {

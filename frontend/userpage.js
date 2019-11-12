@@ -15,7 +15,13 @@ const loadUser = async () => {
                 userDiv.id = user.firstname
                 let userdata = userresponse.data
                 
+                let images = user.img_url
+                let img = document.createElement('img')
+                img.src= images
+                console.log(images)
+
                 userDiv.innerText = `${user.firstname} ${user.lastname}`;
+                userDiv.appendChild(img)
                 userList.appendChild(userDiv)
                 // userSelected(userdata)
             })  
