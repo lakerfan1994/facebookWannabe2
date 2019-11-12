@@ -12,6 +12,9 @@ document.addEventListener('DOMContentLoaded', async () => {
 	let user_id = user.data.payload.id;
 	placeProfilePic(profilePicLink);
 	loadPosts(user_id);
+	loadAllAlbums(user_id);
+	let albumBoard = document.querySelector('.album-list');
+    albumBoard.addEventListener('click', sendToUniquePicturePage);
 
 
 });
@@ -42,6 +45,30 @@ async function loadPosts(id){
 		newPostDiv.appendChild(newPara);
 		postBoard.appendChild(newPostDiv);
 	};
+}
+
+async function loadAllAlbums(user_id){
+	let albumBoard = document.querySelector('.album-list');
+	let response = await axios.get(`${apiKey}/albums/${user_id}`);
+	console.log(response);
+	for(let i = response.data.payload.length - 1; i >= 0; i--){
+		let newAlbumDiv = document.createElement('div');
+		newAlbumDiv.classList.add('albumDiv');
+		let newAlbum = document.createElement('p');
+		newAlbum.innerText = response.data.payload[i].album_name;
+		newAlbum.title = response.data.payload[i].id;
+		newAlbumDiv.appendChild(newAlbum);
+		albumBoard.appendChild(newAlbumDiv);
+	}
+}
+
+const sendToUniquePicturePage = (event) => {
+	console.log(event.target);
+    let x = event.target.title;
+   let user = window.localStorage;
+   let album_id = x;
+   user.setItem('album_id', `${album_id}`);
+   window.location.href = "./picturespage.html";  
 }
 
 
