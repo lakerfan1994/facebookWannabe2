@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
 const loadpicture = async() => {
     const container = document.querySelector('#container');
     container.innerHTML = "";
-    let albumId = 1
+    let albumId = localStorage.getItem()
     const response = await axios.get(`http://localhost:3000/pictures/${albumId}`);
     for(let i = 0; i < response.data.payload.length; i++){
             let images = response.data.payload[i].picture_url
