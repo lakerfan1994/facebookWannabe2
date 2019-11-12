@@ -150,12 +150,25 @@ INSERT INTO albums(album_name, albumOwner_id)
           ('Vegan Dessert', 3),
           ('Chicken', 4),
           ('Chicken Apps', 4),
-          ('Mediterainian Lunch', 5),
-          ('Mediterainian Dinner', 5),
+          ('Mediterranean Lunch', 5),
+          ('Mediterranean Dinner', 5),
           ('Chinese Apps', 6),
           ('Japanese Apps', 6),
           ('Seafood Pasta', 7),
           ('Seafood Soup', 7);
 
 INSERT INTO pictures(album_id, picture_url)
-    VALUES(1, 'https://media-public.canva.com/MACoEBYEqIA/1/thumbnail_large.jpg'), (1, 'https://media-public.canva.com/MAC5J15iTgg/1/thumbnail_large-1.jpg');
+    VALUES(1, 'https://media-public.canva.com/MACoEBYEqIA/1/thumbnail_large.jpg'), 
+          (1, 'https://cdn.pixabay.com/photo/2016/01/22/02/13/meat-1155132_1280.jpg'),
+          (2, 'https://cdn.pixabay.com/photo/2019/08/16/16/18/pancakes-4410606_1280.jpg'),
+          (2, 'https://cdn.pixabay.com/photo/2014/01/09/10/14/kimchi-fried-rice-241051_1280.jpg'),
+          (3, 'https://cdn.pixabay.com/photo/2015/02/15/17/14/potatoes-637370_1280.jpg'),
+          (3, 'https://cdn.pixabay.com/photo/2019/11/08/13/56/cake-4611484_1280.jpg'),
+          (4, 'https://cdn.pixabay.com/photo/2019/04/07/17/20/chicken-4110208_1280.jpg'),
+          (4, 'https://cdn.pixabay.com/photo/2016/07/31/17/51/chicken-1559548_1280.jpg'),
+          (5, 'https://cdn.pixabay.com/photo/2019/10/12/15/39/falafel-4544137_1280.jpg'),
+          (5, 'https://cdn.pixabay.com/photo/2014/07/31/23/59/tapas-407231_1280.jpg'),
+          (6, 'https://pixabay.com/photos/%E9%BA%BB%E8%BE%A3-spicy-vegetables-mushroom-food-951834/'),
+          (6, 'https://cdn.pixabay.com/photo/2017/10/15/11/41/sushi-2853382_1280.jpg'),
+          (7, 'https://cdn.pixabay.com/photo/2015/09/27/16/50/spaghetti-960978_1280.jpg'),
+          (7, 'https://cdn.pixabay.com/photo/2018/09/27/17/34/seafood-dinner-3707538_1280.jpg');
