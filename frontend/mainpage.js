@@ -16,7 +16,7 @@ const loadPosts = async () => {
         userresponse.data.payload.forEach((user) => {
             if (user.id === postArr[post].poster_id) {
                 let postContainer = document.createElement('div');
-                postContainer.class = 'post';
+                postContainer.id = 'post';
                 let profilepic = document.createElement('img');
                 profilepic.src = user.img_url;
                 let userpost = document.createElement('p');
@@ -59,4 +59,8 @@ const populateSelect = async () => {
         list.add(option)
         console.log(option.text)
     })
+}
+
+const loadPostComments = async (postId) => {
+    const url = 'http://localhost:3000/comments/'
 }
