@@ -17,10 +17,7 @@ app.use(express.json());
 
 // Routes
 const userRouter = require('./routes/users');
-
 const postRouter = require('./routes/post');
-
-
  const commentRouter = require('./routes/comments');
  const likeRouter = require('./routes/likes')
  const albumRouter = require('./routes/albums');
@@ -33,6 +30,7 @@ app.use('/posts', postRouter);
 app.use('/comments', commentRouter);
 app.use('/albums', albumRouter);
 app.use('/pictures', pictureRouter);
+
 
 
 app.listen(port, ()=>{
