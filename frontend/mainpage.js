@@ -115,7 +115,3 @@ const sendToUniqueUserPage = (event) => {
    window.location.href = "./singleUser.html";  
 }
 
-const loadPostComments = async (postId) => {
-    const url = 'http://localhost:3000/comments/'
-}
-
