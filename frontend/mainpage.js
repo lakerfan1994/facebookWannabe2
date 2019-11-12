@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
+    loadPostComments(1);
     loadPosts();
     populateSelect();
     let submitPost = document.querySelector('#submitPost');
@@ -10,25 +11,59 @@ const loadPosts = async () => {
     postsList.innerHTML = "";
     const postresponse = await axios.get('http://localhost:3000/posts/all');
     const userresponse = await axios.get('http://localhost:3000/users/all');
-    console.log(postresponse.data.payload)
+    
+    
     for (let post = postresponse.data.payload.length - 1; post >= 0; post--) {
+        
         let postArr = postresponse.data.payload
-        userresponse.data.payload.forEach((user) => {
+        
+        userresponse.data.payload.forEach(async(user) => {
+            let comments = await loadPostComments(postArr[post].id);
+
             if (user.id === postArr[post].poster_id) {
                 let postContainer = document.createElement('div');
                 postContainer.id = 'post';
                 let profilepic = document.createElement('img');
                 profilepic.src = user.img_url;
+                postContainer.appendChild(profilepic);
                 let userpost = document.createElement('p');
                 userpost.innerText = `${user.firstname} ${user.lastname} - ${postArr[post].body}`;
+                postContainer.appendChild(userpost);
+                comments.response.forEach((comment) => {
+                    console.log(comment)
+                    let commentsSection = document.createElement('div');
+                    commentsSection.class = 'commSect'
+                    let singleComment = document.createElement('p');
+                    singleComment.id = comment.id
+                    singleComment.innerText = comment.body
+                    let userpic = document.createElement('img');
+                    userpic.src = comment.img_url;
+                    userpic.classList.add('user');
+                    commentsSection.appendChild(userpic);
+                    singleComment.innerText = `${comment.firstname} ${comment.lastname} - ${comment.body}`
+                    commentsSection.appendChild(singleComment)
+                    postContainer.appendChild(commentsSection)
+                    
+
+                })
                 
-                postContainer.appendChild(profilepic);
-                postContainer.appendChild(userpost); 
                 postsList.append(postContainer);
             }
+
+            // if ()
         })
     };
 
+}
+
+const loadPostComments = async (postId) => {
+    const url = 'http://localhost:3000/comments/'
+    let response = await axios.get(url + `${postId}`)
+    let obj = {
+        response: response.data.payload
+    }
+
+    return obj
 }
 
 const addNewPost = async (event) => {
@@ -41,6 +76,8 @@ const addNewPost = async (event) => {
 
     loadPosts()
 };
+
+
 
 const populateSelect = async () => {
     let list = document.querySelector('#usersList');
@@ -61,6 +98,3 @@ const populateSelect = async () => {
     })
 }
 
-const loadPostComments = async (postId) => {
-    const url = 'http://localhost:3000/comments/'
-}

@@ -5,7 +5,8 @@ const db = require('../db')
 
 router.get('/:post_id', async (req, res) => {
 let post_id = req.params.post_id
-let comments = await db.any(`SELECT * FROM comments WHERE post_id = ${post_id}`);
+let comments = await db.any(`
+    SELECT * FROM comments JOIN users ON users.id = comments.commenter_id WHERE post_id = ${post_id}`);
 
     try {
         if(comments.length === 0){
