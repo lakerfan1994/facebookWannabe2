@@ -20,7 +20,6 @@ h1 {
    font-weight: 700; 
    justify-content: center;
    font-size: 3em;
-   
 }
 
 a {
@@ -39,15 +38,15 @@ a:hover {
     padding-top: 1.5em;
     display: grid;
     grid-gap: 1em;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
 }
 
 img {
     padding: .5em;
     border: 3px solid black;
     border-radius: 5px;
-    width: 15em;
-
+    width: 19em;
+    border-radius: 25px
 }
 
 img:hover {
@@ -55,4 +54,20 @@ img:hover {
  background: #480a02;
  -webkit-transition: .2s ease-in-out;
 	transition: .2s ease-in-out;
+}
+
+#logo{
+    width:4em;
+}
+
+div{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr ;
+    justify-content: center;
+    padding: .9em;
+}
+
+h2 {
+    display:flex;
+    justify-content: center;
 }

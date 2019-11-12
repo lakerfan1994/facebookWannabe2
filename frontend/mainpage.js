@@ -4,6 +4,8 @@ document.addEventListener('DOMContentLoaded', () => {
     populateSelect();
     let submitPost = document.querySelector('#submitPost');
     submitPost.addEventListener('click', addNewPost);
+    let mainBoard = document.querySelector('#posts-list');
+    mainBoard.addEventListener('click', sendToUniqueUserPage);
 });
 
 const loadPosts = async () => {
@@ -25,7 +27,10 @@ const loadPosts = async () => {
                 postContainer.id = 'post';
                 let profilepic = document.createElement('img');
                 profilepic.src = user.img_url;
+
                 postContainer.appendChild(profilepic);
+                profilepic.alt = `${user.firstname}/${user.lastname}`;
+
                 let userpost = document.createElement('p');
                 userpost.innerText = `${user.firstname} ${user.lastname} - ${postArr[post].body}`;
                 postContainer.appendChild(userpost);
@@ -96,5 +101,21 @@ const populateSelect = async () => {
         list.add(option)
         console.log(option.text)
     })
+}
+
+
+const sendToUniqueUserPage = (event) => {
+    let x = event.target.alt;
+    let array = x.split("/")
+   let user = window.localStorage;
+   let firstname = array[0];
+   let lastname = array[1];
+   user.setItem('firstName', `${firstname}`);
+   user.setItem('lastName', `${lastname}`);
+   window.location.href = "./singleUser.html";  
+}
+
+const loadPostComments = async (postId) => {
+    const url = 'http://localhost:3000/comments/'
 }
 
