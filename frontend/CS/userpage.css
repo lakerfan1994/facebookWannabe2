@@ -59,6 +59,7 @@ img:hover {
 #logo{
     width:3em;
 }
+
 div{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr ;
