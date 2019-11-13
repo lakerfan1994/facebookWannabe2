@@ -14,6 +14,7 @@ h1 {
    color: black; 
 }
 
+
 #signUp {
     background-color: rgba(35, 136, 230, 0.502);
     padding-top: .05em;
@@ -39,4 +40,5 @@ input {
     width: 15em;
     height: 2em;
 }
+
 

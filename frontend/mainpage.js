@@ -43,9 +43,9 @@ const loadPosts = async () => {
                 comments.response.forEach((comment) => {
                     console.log(comment)
                     let commentsSection = document.createElement('div');
-                    commentsSection.class = 'commSect'
+                    commentsSection.classList.add('commSect');
                     let singleComment = document.createElement('p');
-                    singleComment.id = comment.id
+                    singleComment.classList.add('comment')
                     singleComment.innerText = comment.body
                     let userpic = document.createElement('img');
                     userpic.src = comment.img_url;
