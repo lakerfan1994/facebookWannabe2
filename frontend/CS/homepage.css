@@ -1,25 +1,19 @@
 body{
     font-family: 'Poppins', sans-serif;
-    background-image: url("https://cdn.pixabay.com/photo/2017/03/27/14/36/bell-pepper-2179100_1280.jpg");
+    background-image: url("https://images.unsplash.com/photo-1518291344630-4857135fb581?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80");
     color: white;
     background-repeat: no-repeat;
     background-size: cover;
 }
 
-.header{
-    display:flex;
-    justify-content: space-evenly;
-    background-color: rgba(233, 17, 17, 0.18);
-    border-radius: .25em;
-    padding-top: .5em;
-    padding-bottom: .5em;
-}
+
 
 h1 {
    display:flex;
    font-weight: 700; 
    justify-content: center;
-   font-size: 3em;
+   font-size: 4.9em;
+   color: black;
    
 }
 
@@ -50,9 +44,29 @@ img {
 
 }
 
-img:hover {
- opacity: .75;
- background: #480a02;
- -webkit-transition: .2s ease-in-out;
-	transition: .2s ease-in-out;
+
+
+#signUp {
+    background-color: rgba(35, 136, 230, 0.502);
+    padding-top: .05em;
+    display: flex;
+    justify-content: center;
+ 
+}
+
+#newUserForm{
+    color: black;
+    font-size: 2em;
+}
+
+input {
+    width: 15em;
+    height: 2em;
+}
+
+#submit {
+    display: flex;
+    justify-content: center;
+    width: 13em;
+    height: 12em;
 }
