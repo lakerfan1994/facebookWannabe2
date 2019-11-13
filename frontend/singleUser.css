@@ -61,3 +61,12 @@ img:hover {
 	transition: .2s ease-in-out;
 }
 
+.list-of-posts{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    grid-gap: 1em;
+    /* padding: 200px; */
+    background-color: rgba(33, 33, 33, 0.707);
+     width: 600px;
+}
