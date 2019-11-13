@@ -29,6 +29,19 @@ a:hover {
     display: flex;
     flex-direction: column;
     grid-gap: 1em;
+    padding-left: 200px;
+}
+#new-post {
+    display: flex;
+    flex-direction: column;
+    grid-gap: 1em;
+    padding-left: 200px;
+}
+
+h1 {
+    font-weight: 700; 
+    font-size: 3em;
+    text-shadow: 2px 2px red;
 }
 
 h2 {
@@ -36,6 +49,7 @@ h2 {
     font-weight: 700; 
     justify-content: center;
     font-size: 3em;
+    text-shadow: 2px 2px red;
 }
 
 img {
