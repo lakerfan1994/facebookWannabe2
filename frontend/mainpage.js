@@ -6,7 +6,13 @@ document.addEventListener('DOMContentLoaded', () => {
     submitPost.addEventListener('click', addNewPost);
     let mainBoard = document.querySelector('#posts-list');
     mainBoard.addEventListener('click', sendToUniqueUserPage);
+    let logo = document.querySelector('h1');
+    logo.addEventListener('click', backToHome);
 });
+
+const backToHome = () => {
+     window.location.href = "./homepage.html"; 
+}
 
 const loadPosts = async () => {
     const postsList = document.querySelector('#posts-list');
