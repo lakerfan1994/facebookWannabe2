@@ -2,7 +2,13 @@ document.addEventListener('DOMContentLoaded', () => {
     loadUser();
     let user = document.querySelector('#allUsers');
     user.addEventListener('click', userSelected)
+    let logo = document.querySelector('h1');
+    logo.addEventListener('click', backToHome);
 });
+
+const backToHome = () => {
+     window.location.href = "./homepage.html"; 
+}
 const loadUser = async () => {
     const userList = document.querySelector('#allUsers');
     userList.innerHTML = "";

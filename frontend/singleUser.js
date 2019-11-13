@@ -15,9 +15,13 @@ document.addEventListener('DOMContentLoaded', async () => {
 	loadAllAlbums(user_id);
 	let albumBoard = document.querySelector('.album-list');
     albumBoard.addEventListener('click', sendToUniquePicturePage);
-
-
+     let logo = document.querySelector('h1');
+    logo.addEventListener('click', backToHome);
 });
+
+const backToHome = () => {
+     window.location.href = "./homepage.html"; 
+}
 
 function addNameToBrowser(first, last){
 	let userTag = document.querySelector('.name-of-user');
