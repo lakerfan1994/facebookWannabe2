@@ -11,7 +11,8 @@ h1 {
    font-weight: 700; 
    justify-content: center;
    font-size: 4.9em;
-   color: black; 
+   color: white;
+   text-shadow: rgba(35, 136, 230, 0.502);
 }
 
 

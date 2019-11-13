@@ -79,8 +79,6 @@ img:hover {
 .container {
     display: flex;
     justify-content: center;
-    
-    
 }
 .list-of-posts{
     display: flex;
