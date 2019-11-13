@@ -15,9 +15,13 @@ document.addEventListener('DOMContentLoaded', async () => {
 	loadAllAlbums(user_id);
 	let albumBoard = document.querySelector('.album-list');
     albumBoard.addEventListener('click', sendToUniquePicturePage);
-
-
+     let logo = document.querySelector('h1');
+    logo.addEventListener('click', backToHome);
 });
+
+const backToHome = () => {
+     window.location.href = "./homepage.html"; 
+}
 
 function addNameToBrowser(first, last){
 	let userTag = document.querySelector('.name-of-user');
@@ -54,7 +58,7 @@ async function loadAllAlbums(user_id){
 	for(let i = response.data.payload.length - 1; i >= 0; i--){
 		let newAlbumDiv = document.createElement('div');
 		newAlbumDiv.classList.add('albumDiv');
-		let newAlbum = document.createElement('p');
+		let newAlbum = document.createElement('button');
 		newAlbum.innerText = response.data.payload[i].album_name;
 		newAlbum.title = response.data.payload[i].id;
 		newAlbumDiv.appendChild(newAlbum);
