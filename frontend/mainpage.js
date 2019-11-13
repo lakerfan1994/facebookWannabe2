@@ -49,6 +49,7 @@ const loadPosts = async () => {
                     singleComment.innerText = comment.body
                     let userpic = document.createElement('img');
                     userpic.src = comment.img_url;
+                    userpic.alt = `${comment.firstname}/${comment.lastname}`;
                     userpic.classList.add('user');
                     commentsSection.appendChild(userpic);
                     singleComment.innerText = `${comment.firstname} ${comment.lastname} - ${comment.body}`

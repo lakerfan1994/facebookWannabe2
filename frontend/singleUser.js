@@ -3,11 +3,14 @@ document.addEventListener('DOMContentLoaded', async () => {
 	let localStorage = window.localStorage;
 	let firstName = localStorage.getItem('firstName');
 	let lastName = localStorage.getItem('lastName');
+	console.log(firstName);
+	console.log(lastName);
 	//let firstName = 'Ruben';
 	//let lastName = 'Garcia';
 	addNameToBrowser(firstName, lastName);
 	let user = await axios.get(`${apiKey}/users/${firstName}/${lastName}`);
 	console.log(user);
+	
 	let profilePicLink = user.data.payload.img_url;
 	let user_id = user.data.payload.id;
 	placeProfilePic(profilePicLink);
