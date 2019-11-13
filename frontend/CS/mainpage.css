@@ -21,8 +21,20 @@ a {
     padding: 2em;
 }
 
-a:hover {
+a:hover{
     color: rgb(50, 13, 13);
+}
+
+.deletePost{
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    font-size: 20px
+}
+
+.relative{
+    position: relative;
 }
 
 #posts-list {
