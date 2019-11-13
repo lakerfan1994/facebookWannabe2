@@ -262,12 +262,12 @@ Place the potatoes with the cut side up in the baking dish, spaced a little apar
 3 Season the potatoes: In a small bowl, combine the melted butter, oil, and parsley. Drizzle this over the potatoes and then use a pastry brush to spread the butter and oil mixture evenly and in between the slices of each potato. Sprinkle with salt.
 4 Bake for 1 hour and 15 minutes, or until golden and crispy. The potatoes will fan out more during cooking and take on their accordion-like appearance. Serve hot.'),
 
-          (3, 'https://cdn.pixabay.com/photo/2019/11/08/13/56/cake-4611484_1280.jpg'),
-          (4, 'https://cdn.pixabay.com/photo/2019/04/07/17/20/chicken-4110208_1280.jpg'),
-          (4, 'https://cdn.pixabay.com/photo/2016/07/31/17/51/chicken-1559548_1280.jpg'),
-          (5, 'https://cdn.pixabay.com/photo/2019/10/12/15/39/falafel-4544137_1280.jpg'),
-          (5, 'https://cdn.pixabay.com/photo/2014/07/31/23/59/tapas-407231_1280.jpg'),
-          (6, 'https://pixabay.com/photos/%E9%BA%BB%E8%BE%A3-spicy-vegetables-mushroom-food-951834/'),
-          (6, 'https://cdn.pixabay.com/photo/2017/10/15/11/41/sushi-2853382_1280.jpg'),
-          (7, 'https://cdn.pixabay.com/photo/2015/09/27/16/50/spaghetti-960978_1280.jpg'),
-          (7, 'https://cdn.pixabay.com/photo/2018/09/27/17/34/seafood-dinner-3707538_1280.jpg');
+          (3, 'https://cdn.pixabay.com/photo/2019/11/08/13/56/cake-4611484_1280.jpg', ''),
+          (4, 'https://cdn.pixabay.com/photo/2019/04/07/17/20/chicken-4110208_1280.jpg', ''),
+          (4, 'https://cdn.pixabay.com/photo/2016/07/31/17/51/chicken-1559548_1280.jpg', ''),
+          (5, 'https://cdn.pixabay.com/photo/2019/10/12/15/39/falafel-4544137_1280.jpg', ''),
+          (5, 'https://cdn.pixabay.com/photo/2014/07/31/23/59/tapas-407231_1280.jpg', ''),
+          (6, 'https://pixabay.com/photos/%E9%BA%BB%E8%BE%A3-spicy-vegetables-mushroom-food-951834/', ''),
+          (6, 'https://cdn.pixabay.com/photo/2017/10/15/11/41/sushi-2853382_1280.jpg', ''),
+          (7, 'https://cdn.pixabay.com/photo/2015/09/27/16/50/spaghetti-960978_1280.jpg', ''),
+          (7, 'https://cdn.pixabay.com/photo/2018/09/27/17/34/seafood-dinner-3707538_1280.jpg', '');
