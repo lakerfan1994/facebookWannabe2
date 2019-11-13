@@ -4,6 +4,7 @@ body {
     color: white;
     background-repeat: no-repeat;
     background-size: cover;
+    text-shadow: 2px 2px rgb(0, 81, 99);
 }
 
 h1 {

@@ -80,6 +80,7 @@ img:hover {
     display: flex;
     justify-content: center;
 }
+
 .list-of-posts{
     display: flex;
     flex-direction: column;
@@ -87,8 +88,15 @@ img:hover {
     background-color: rgba(0, 142, 174, 0.783);
     width: 600px;  
     border: 2px solid black;
+    border-radius: .25em;
 }
 
 .albumDiv {
     padding-bottom: .8em;
+}
+
+.postDiv{
+    display: list-item;
+    margin-left: 1.3em;
+    list-style-type: circle;  
 }

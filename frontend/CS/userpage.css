@@ -64,7 +64,7 @@ img:hover {
  opacity: .75;
  background:  rgba(10, 54, 95, 0.502)
  -webkit-transition: .2s ease-in-out;
-	transition: .2s ease-in-out;
+transition: .2s ease-in-out;
 }
 
 #logo{
@@ -83,4 +83,8 @@ div{
 h2 {
     display:flex;
     justify-content: center;
+    font-weight: 700; 
+    font-size: 3em;
+    color: white;
+    text-shadow: 2px 2px rgb(0, 81, 99);
 }
