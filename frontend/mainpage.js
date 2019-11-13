@@ -48,14 +48,10 @@ const loadPosts = async () => {
                     singleComment.innerText = `${comment.firstname} ${comment.lastname} - ${comment.body}`
                     commentsSection.appendChild(singleComment)
                     postContainer.appendChild(commentsSection)
-                    
 
                 })
-                
                 postsList.append(postContainer);
             }
-
-            // if ()
         })
     };
 
