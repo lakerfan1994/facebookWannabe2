@@ -6,52 +6,12 @@ body {
     background-size: cover;
 }
 
-
-
 h1 {
    display:flex;
    font-weight: 700; 
    justify-content: center;
-
    font-size: 4.9em;
-   color: black;
-  
-}
-
-a {
-    font-size: 1.25em;
-    color: white;
-    padding: 2em;
-    
-}
-
-
-
-a:hover {
-    color: rgb(22, 18, 18);
-}
-
-#enter {
-    display:flex;
-    justify-content: center;
-}
-
-#container {
-    justify-items: center;
-    padding-top: 1.5em;
-    display: grid;
-    grid-gap: 1em;
-    grid-template-columns: 1fr 1fr 1fr;
-}
-
-#mainpage {
-    display:flex;
-    justify-content: center;
-}
-
-#login {
-    font-size: 5em;
-    padding: 0.5em;
+   color: black; 
 }
 
 
@@ -60,7 +20,6 @@ a:hover {
     padding-top: .05em;
     display: flex;
     justify-content: center;
- 
 }
 
 #newUserForm{
@@ -68,14 +27,18 @@ a:hover {
     font-size: 2em;
 }
 
+input[type=submit] {
+    font-size: 1em;
+    font-weight: bolder;
+    display: flex;
+    justify-content: center;
+    width: 13em;
+    height: 13em;
+}
+
 input {
     width: 15em;
     height: 2em;
 }
 
-#submit {
-    display: flex;
-    justify-content: center;
-    width: 13em;
-    height: 12em;
-}
+
