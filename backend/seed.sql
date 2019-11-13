@@ -156,7 +156,7 @@ INSERT INTO albums(album_name, albumOwner_id)
           ('Japanese Apps', 6),
           ('Seafood Pasta', 7),
           ('Seafood Soup', 7);
-
+--some of the pictures need to be changed to match the album they are in
 INSERT INTO pictures(album_id, picture_url)
     VALUES(1, 'https://media-public.canva.com/MACoEBYEqIA/1/thumbnail_large.jpg'), 
           (1, 'https://cdn.pixabay.com/photo/2016/01/22/02/13/meat-1155132_1280.jpg'),
