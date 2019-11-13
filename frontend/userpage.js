@@ -18,6 +18,7 @@ const loadUser = async () => {
                 let images = user.img_url
                 let img = document.createElement('img')
                 img.src= images
+                img.alt = `${user.firstname} ${user.lastname}`;
                 console.log(images)
 
                 userDiv.innerText = `${user.firstname} ${user.lastname}`;
@@ -28,6 +29,9 @@ const loadUser = async () => {
 }   
 const userSelected = (event) => {
     let x = event.target.innerText;
+    if(!(x)){
+      x = event.target.alt;
+    }
    let array = x.split(" ")
    let user = window.localStorage;
    let firstname = array[0];
