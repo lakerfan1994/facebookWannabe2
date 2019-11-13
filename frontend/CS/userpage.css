@@ -30,7 +30,12 @@ h1 {
 
 #foodSpace{
     text-align: center;
+    font-weight: 700; 
+    font-size: 3em;
+    text-shadow: rgba(35, 136, 230, 0.502);
+    color:  white;
 }
+
 
 h2{
     display:flex;

@@ -61,7 +61,7 @@ async function loadAllAlbums(user_id){
 	for(let i = response.data.payload.length - 1; i >= 0; i--){
 		let newAlbumDiv = document.createElement('div');
 		newAlbumDiv.classList.add('albumDiv');
-		let newAlbum = document.createElement('p');
+		let newAlbum = document.createElement('button');
 		newAlbum.innerText = response.data.payload[i].album_name;
 		newAlbum.title = response.data.payload[i].id;
 		newAlbumDiv.appendChild(newAlbum);
