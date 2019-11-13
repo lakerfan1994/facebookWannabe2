@@ -6,11 +6,11 @@ body {
     background-position: center;
 }
 
-#maincontainer {
-    backdrop-filter: blur(2px);
-}
+
 p {
     font-size: 1.25em;
+    color: white;
+    text-shadow: 2px 2px rgb(0, 81, 99);
 }
 
 .header {
@@ -29,7 +29,7 @@ a {
 }
 
 a:hover{
-    color: rgb(50, 13, 13);
+    color: rgba(35, 136, 230, 0.502);
 }
 
 .deletePost{
@@ -82,6 +82,7 @@ textarea {
 }
 
 h1 {
+    text-align: center;
     font-weight: 700; 
     font-size: 3em;
     color: white;
@@ -121,6 +122,8 @@ img:hover {
     padding: .5em;
     border: 3px solid black;
     border-radius: 5px;
+    margin-bottom: .5em;
+
 }
 
 .commSect {
