@@ -17,18 +17,20 @@ body{
 	text-align: center;
 }
 
+#foodSpace{
+    color: black;
+}
 h1 {
    display:flex;
    font-weight: 700; 
    justify-content: center;
-   font-size: 3em;
-   
+   font-size: 3em; 
 }
 
 a {
     font-size: 1.25em;
     color: white;
-    padding: 2em;
+  
 }
 
 a:hover {
@@ -58,3 +60,4 @@ img:hover {
  -webkit-transition: .2s ease-in-out;
 	transition: .2s ease-in-out;
 }
+

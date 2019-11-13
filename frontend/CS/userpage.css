@@ -19,6 +19,9 @@ h1 {
    text-shadow: rgba(35, 136, 230, 0.502);
    color:  black;
 }
+#foodSpace{
+text-align: center;
+}
 
 h2{
     display:flex;
