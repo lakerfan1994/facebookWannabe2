@@ -9,16 +9,31 @@ body{
 .header{
     display:flex;
     justify-content: space-evenly;
-    background-color:rgba(35, 136, 230, 0.502);
+    background-color:rgba(0, 142, 174, 0.783);
     border-radius: .25em;
+    padding-top: 1em;
+    padding-bottom: 1em;
 }
 
 .main-sidebar{
 	text-align: center;
 }
 
+button {
+    border: 1px solid black;
+    border-radius: .25em;
+    
+    
+}
+
+button:hover {
+    background-color: rgba(0, 142, 174, 0.783);
+}
+
 #foodSpace{
-    color: black;
+    color: white;
+    text-shadow: 2px 2px rgba(0, 81, 99);
+
 }
 h1 {
    display:flex;
@@ -61,12 +76,21 @@ img:hover {
 	transition: .2s ease-in-out;
 }
 
+.container {
+    display: flex;
+    justify-content: center;
+    
+    
+}
 .list-of-posts{
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    grid-gap: 1em;
-    /* padding: 200px; */
-    background-color: rgba(33, 33, 33, 0.707);
-     width: 600px;
+    justify-items: center;
+    background-color: rgba(0, 142, 174, 0.783);
+    width: 600px;  
+    border: 2px solid black;
+}
+
+.albumDiv {
+    padding-bottom: .8em;
 }
