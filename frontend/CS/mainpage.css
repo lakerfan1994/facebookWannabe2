@@ -6,7 +6,6 @@ body {
     background-position: center;
 }
 
-
 p {
     font-size: 1.25em;
     color: white;
@@ -29,7 +28,7 @@ a {
 }
 
 a:hover{
-    color: rgba(35, 136, 230, 0.502);
+    color: black;
 }
 
 .deletePost{

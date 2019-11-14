@@ -52,14 +52,16 @@ a {
 }
 
 a:hover {
-    color:  rgba(35, 136, 230, 0.502);
+    color: black;
 }
 
 
 #allUsers {
     display:flex;
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
     justify-items: center;
-    padding-top: 1.5em;
+    padding-top: .5em;
 }
 
 img {
